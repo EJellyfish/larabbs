@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAvatorAndIntroductionToUsersTable extends Migration
+class AddAvatarAndIntroductionToUsersTable extends Migration
 {
     /**
-     * Run the migrations.
+     * 执行迁移
      *
      * @return void
      */
@@ -20,7 +20,7 @@ class AddAvatorAndIntroductionToUsersTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * 回滚迁移
      *
      * @return void
      */
