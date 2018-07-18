@@ -68,11 +68,19 @@
     <script type="text/javascript"  src="{{ asset('js/simditor.js') }}"></script>
 
     <script>
-    $(document).ready(function(){
-        var editor = new Simditor({
-            textarea: $('#editor'),
+        $(document).ready(function(){
+            var editor = new Simditor({
+                textarea: $('#editor'),
+                upload: {
+                    url: '{{ route('topics.upload_image') }}', // 处理上传图片的 URL
+                    params: { _token: '{{ csrf_token() }}' }, // 表单提交的参数，Laravel 的 POST 请求必须带防止 CSRF 跨站请求伪造的 _token 参数
+                    fileKey: 'upload_file', // 服务器端获取图片的键值
+                    connectionCount: 3, // 最多同时上传图片数量
+                    leaveConfirm: '文件上传中，关闭此页面将取消上传。' // 上传过程关闭提示
+                },
+                pasteImage: true, // 设定是否支持图片黏贴上传
+            });
         });
-    });
     </script>
 
 @stop
