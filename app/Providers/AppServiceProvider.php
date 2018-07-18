@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // 本地化Carbon时间戳拓展
         \Carbon\Carbon::setLocale('zh');
+        \App\Models\Topic::observe(\App\Observers\TopicObserver::class);
     }
 
     /**
