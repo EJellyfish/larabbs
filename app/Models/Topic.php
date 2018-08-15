@@ -52,8 +52,6 @@ class Topic extends Model
 
     /**
      * 话题seo路由生成
-     * @param array $params
-     * @return void
      */
     public function link($params = [])
     {

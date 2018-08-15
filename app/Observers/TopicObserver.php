@@ -28,4 +28,10 @@ class TopicObserver
             dispatch(new TranslateSlug($topic));
         }
     }
+
+    // 删除话题时，删除所有该话题的回复内容，直接操作数据库避免重复进行模型监听
+    public function deleted(Topic $topic)
+    {
+        \DB::table('replies')->where('topic_id', $topic->id)->delete();
+    }
 }
